@@ -29,7 +29,7 @@
 					<td>@{{keep.created_at}}</td>
 					<td>@{{keep.updated_at}}</td>
 					<td>
-						<a href="#" class="btn btn-warning">Actualizar</a>
+						<a href="#" class="btn btn-warning" v-on:click="editKeep(keep)">Actualizar</a>
 					</td>
 					<td>
 						<a href="#" class="btn btn-danger" v-on:click="deleteKeep(keep)">Eliminar</a>
@@ -38,6 +38,7 @@
 			</tbody>
 		</table>
 		@include('create')
+		@include('edit')
 	</div>
 	<div class="col-sm-5">
 		@{{$data}}
