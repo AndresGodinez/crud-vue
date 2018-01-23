@@ -14,4 +14,4 @@
 Route::get('/', function () {
     return view('dash-board');
 });
-Route::resource('tasks', 'taskController', ['except'=>'show']);
+Route::resource('tasks', 'taskController', ['except'=>'show', 'create', 'edit']);
