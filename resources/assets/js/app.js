@@ -15,7 +15,7 @@ new Vue({
 		getKeeps: function(){
 			var urlKepps = 'tasks';
 			axios.get(urlKepps).then(response =>{
-				this.keeps = response.data
+				this.keeps = response.data.tasks.data
 			});
 		},
 		editKeep: function(keep){
@@ -33,7 +33,7 @@ new Vue({
 					$('#edit').modal('hide');
 					toastr.success('Actualizado Correctamente');
 				}).catch(error =>{
-					this.errors = error.response.data
+					this.errors = error.response
 				});
 		},
 		deleteKeep: function (keep){
