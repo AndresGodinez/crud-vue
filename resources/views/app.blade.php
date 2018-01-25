@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Lista de tareas</title>
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 
 </head>

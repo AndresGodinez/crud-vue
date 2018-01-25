@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Carbon\Carbon;
 
 use App\Task;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ class TaskController extends Controller
      */
     public function index(Request $request)
     {
+        $date = Carbon::now();
         $tasks = Task::orderBy('id','DESC')->paginate(15);
 
         return [
@@ -25,7 +27,8 @@ class TaskController extends Controller
                 'from'           => $tasks->firstItem(),
                 'to'             => $tasks->lastItem()
             ],
-            'tasks' => $tasks
+            'tasks' => $tasks,
+            'date' => $date,
         ];
     }
 

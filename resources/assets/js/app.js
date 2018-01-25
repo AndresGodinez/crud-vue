@@ -15,6 +15,7 @@ new Vue({
 			'from'       	: 0,
 			'to'         	: 0,
 		},
+		date: [],
 		newKeep: '',
 		fillKeep:{'id':'','keep':''},
 		errors: [],
@@ -49,7 +50,8 @@ new Vue({
 			var urlKepps = 'tasks?page='+ page;
 			axios.get(urlKepps).then(response =>{
 				this.keeps = response.data.tasks.data,
-				this.pagination = response.data.pagination
+				this.pagination = response.data.pagination,
+				this.date = response.data.date
 			});
 		},
 		editKeep: function(keep){
